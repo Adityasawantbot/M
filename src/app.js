@@ -12,4 +12,11 @@ app.use(express.json({
 app.use(express.urlencoded({extended:true, limit:"25kb"}))
 app.use(express.static("public" ))
 app.use(cookieParser())
+
+// import router
+import userRouter from "./routes/user.routes.js"
+
+
+//route declaration   
+app.use("/api/v1/users",userRouter)      /// here use keyword is used because we are using middleware 
 export default app;
